@@ -13,3 +13,9 @@
   color: white;
 }
 
+.form{
+  display: flex;
+  background-color: #181b21;
+  padding: 30px;
+}
+
