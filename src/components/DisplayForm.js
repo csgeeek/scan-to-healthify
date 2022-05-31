@@ -28,28 +28,36 @@ const DisplayForm = () => {
 		if(file !== null) {
 			const formData = new FormData();
 			formData.append('file', file);
-			fetch('http://localhost:8000/uploadfile', {
+			const res = await fetch('http://localhost:8000/uploadfile', {
 				method: 'POST',
 				body: formData,
-			})
-			.then(res => res.json())
-			.then(data => {
-				setUpc(data);
-				console.log(data);
-			})
-			.catch(err => console.log(err));
-		}
-		const docRef = doc(dataRef, String(upc));
-		const docSnap = await getDoc(docRef);
+			});
+			const json = await res.json();
 
-		if (docSnap.exists()) {
-			setproductDetails(docSnap.data());
-		}
-		else {
-			setproductDetails(null);
-		}
+			const docRef = doc(dataRef, String(json[0]));
+			const docSnapshot = await getDoc(docRef);
 
+			if(docSnapshot.exists()) {
+				setproductDetails(docSnapshot.data());
+			} else {
+				setproductDetails(null);
+			}
 
+		}
+		else{
+			const docRef = doc(dataRef, String(upc));
+			const docSnap = await getDoc(docRef);
+
+			if (docSnap.exists()) {
+				console.log('s2');
+				setproductDetails(docSnap.data());
+			}
+			else {
+				console.log('mee2');
+				setproductDetails(null);
+			}
+		
+		}
 	}
   return (
     <div>
