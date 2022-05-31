@@ -14,8 +14,8 @@
 }
 
 .form{
-  display: flex;
   background-color: #181b21;
+  text-align: left;
   padding: 30px;
 }
 
