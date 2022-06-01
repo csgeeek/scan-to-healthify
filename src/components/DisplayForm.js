@@ -28,7 +28,7 @@ const DisplayForm = () => {
 		if(file !== null) {
 			const formData = new FormData();
 			formData.append('file', file);
-			const res = await fetch('http://localhost:8000/uploadfile', {
+			const res = await fetch('http://localhost:8000/upload', {
 				method: 'POST',
 				body: formData,
 			});
