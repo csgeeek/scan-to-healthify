@@ -1,6 +1,6 @@
 # scan-to-healthify
 
-This project identifies harmful ingredients in food products by capturing UPC of the barcode.
+This project identifies harmful ingredients in consumer products by capturing UPC of the barcode.
 
 ### Tech-stack:-
 - React
