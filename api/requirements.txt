@@ -1,0 +1,6 @@
+# Tested as of 19-08-2022
+
+easyocr==1.5.0
+fastapi==0.79.0
+uvicorn==0.18.2
+python-multipart==0.0.5
