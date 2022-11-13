@@ -1,3 +1,9 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -17,5 +23,88 @@
   background-color: #181b21;
   text-align: left;
   padding: 30px;
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 25px;
 }
 
+.form-upload{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type='file']{
+  display: none;
+}
+label{
+  display: flex;
+  text-align: center;
+}
+.input-upload{
+  font-size: medium;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  background-color:  #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  transition: 200ms;
+
+}
+.input-upload:hover, .btn:hover{
+  transform: scale(1.1);
+  transition: 200ms;
+}
+.choosed-file{
+  /* transform: translate(0px, 0px); */
+  font-size: small;
+  margin-bottom: -20px;
+}
+.input-text{
+  width: 200px;
+  height: 50px;
+  background-color:  #282c34;
+  color:white;
+  border-radius: 25px;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  padding: 25px;
+  display: flex;
+  text-align: center;
+  transition: 200ms;
+}
+.input-text:hover{
+  transform: scale(1.03);
+  transition: 200ms;
+}
+.input-text:focus{
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+.form button{
+  width: 50%;
+}
+
+.btn{
+  width: 200px;
+  height: 50px;
+  background-color:  #282c34;
+  color:white;
+  border-radius: 25px;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: medium;
+}
+.hidden{
+  opacity: 0;
+}
