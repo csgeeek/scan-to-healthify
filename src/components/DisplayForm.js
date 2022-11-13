@@ -78,7 +78,7 @@ const DisplayForm = () => {
 				</label>
 			</div>
 			<p>OR</p>
-			<input className='input-text' type="text" placeholder='Enter UPC'  onChange={(e) => setUpc(e.target.value)} />
+			<input className='input-text' type="text" placeholder='Enter UPC' type="number" onChange={(e) => setUpc(e.target.value)} />
 			<br></br>
 			<button className='btn' onClick={handleSubmit}>Submit</button>
 			
