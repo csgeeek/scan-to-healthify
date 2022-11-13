@@ -74,7 +74,7 @@ const DisplayForm = () => {
 			<div className='form-upload'>
 			<input className='input-upload' type="file" id="file" onChange={(e) => setFile(e.target.files[0])}/>
 				<label className='input-upload' for="file">
-					Choose a file 
+					Choose file 
 				</label>
 			</div>
 			<p>OR</p>
