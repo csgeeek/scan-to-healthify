@@ -1,6 +1,6 @@
 import React from 'react'
 import Display from './Display'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { db } from '../firebase-config';
 import {
@@ -14,8 +14,17 @@ const DisplayForm = () => {
 	const [upc, setUpc] = useState(null);
 	const [file, setFile] = useState(null);
 	const [productDetails, setproductDetails] = useState(null);
+	const [fileName, setFileName] = useState('none')
 
 	const dataRef = collection(db, 'food-products');
+
+
+	const edit = useEffect(()=>{
+		if(file !== null){
+			console.log(file.name) 
+			setFileName(file.name)
+		}
+	},file)
 
 	const handleSubmit = async (e) => {
 
@@ -62,11 +71,21 @@ const DisplayForm = () => {
   return (
     <div>
 		<div className="form">
-			<input type="file" onChange={(e) => setFile(e.target.files[0])} />
-			<br></br>
-			<input type="text" placeholder='Enter UPC' onChange={(e) => setUpc(e.target.value)} />
+			<div className='form-upload'>
+			<input className='input-upload' type="file" id="file" onChange={(e) => setFile(e.target.files[0])}/>
+				<label className='input-upload' for="file">
+					Choose file 
+				</label>
+			</div>
+			<p>OR</p>
+			<input className='input-text' type="text" placeholder='Enter UPC' type="number" onChange={(e) => setUpc(e.target.value)} />
 			<br></br>
 			<button className='btn' onClick={handleSubmit}>Submit</button>
+			
+				<p className={`choosed-file ${fileName === 'none' ? 'hidden' : null}`}>Choosed file: {fileName}</p>
+
+			
+		
 		</div>
 		<Display productDetails={productDetails} />
     </div>
